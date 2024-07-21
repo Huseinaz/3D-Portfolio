@@ -22,7 +22,7 @@ const ServicCard = ({ index, title, icon }) => {
           className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
         >
           <img src={icon} alt={title} className='w-16 h-16 object-contain' />
-          <h3>{title}</h3>
+          <h3 className='text-white text-[20px] font-bold text-center'>{title}</h3>
         </div>
       </motion.div>
     </Tilt>
@@ -47,6 +47,12 @@ const About = () => {
       >
         I&apos;m a software engineer Passionate about technology with expertise in full stack web development and a strong foundation in software engineering. Proficient in Flutter, React JS, and Laravel. Experienced in collaborative environments, adept at problem solving, and committed to continuous learning. Let&apos;s connect and explore opportunities for innovative projects.
       </motion.p>
+
+      <div className='mt-20 flex flex-wrap gap-10'>
+        {services.map((service, index) => (
+          <ServicCard key={service.title} index={index} {...service} />
+        ))}
+      </div>
     </>
   )
 }
